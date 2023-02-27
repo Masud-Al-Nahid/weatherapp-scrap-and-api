@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+            
+            
+            <form action="" method="get">
+                <input class="form-control mx-auto w-50" type="text" name="city" id="city" placeholder="Enter city Name ....">
+                <input type="submit" class="btn btn-secondary btn-lg my-3" value="Submit">
+            </form>
+          </div>
+          {%if results%}
+          <table class="table w-50 mx-auto mt-5">
+              <thead>
+                  <tr>
+                      <th colspan="2" class="text-center h3">Weather of {{results.region}}</th>
+    
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <th scope="row">Area</th>
+                      <td>{{results.region}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Day Time</th>
+                    <td>{{results.daytime}}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Weather </th>
+                    <td>{{results.weather}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Temperature </th>
+                    <td>{{results.teamparature}} °C </td>
+                </tr>
+              </tbody>
+          </table>
+          {% endif %}
+
+          {% endblock%}
